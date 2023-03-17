@@ -1,40 +1,52 @@
 const KEPLISTA = 
 [
     {
-        eleresiUt: "../kepek/memek/meme1.png"
+        eleresiUt: "./kepek/memek/meme1.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme2.png"
+        eleresiUt: "./kepek/memek/meme2.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme3.png"
+        eleresiUt: "./kepek/memek/meme3.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme4.png"
+        eleresiUt: "./kepek/memek/meme4.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme5.png"
+        eleresiUt: "./kepek/memek/meme5.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme6.png"
+        eleresiUt: "./kepek/memek/meme6.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme1.png"
+        eleresiUt: "./kepek/memek/meme7.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme2.png"
+        eleresiUt: "./kepek/memek/meme8.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme3.png"
+        eleresiUt: "./kepek/memek/meme1.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme4.png"
+        eleresiUt: "./kepek/memek/meme2.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme5.png"
+        eleresiUt: "./kepek/memek/meme3.png"
     },
     {
-        eleresiUt: "../kepek/memek/meme6.png"
+        eleresiUt: "./kepek/memek/meme4.png"
+    },
+    {
+        eleresiUt: "./kepek/memek/meme5.png"
+    },
+    {
+        eleresiUt: "./kepek/memek/meme6.png"
+    },
+    {
+        eleresiUt: "./kepek/memek/meme7.png"
+    },
+    {
+        eleresiUt: "./kepek/memek/meme8.png"
     },
 ]
 
@@ -44,9 +56,8 @@ let db = 0;
 let talalat = 0;
 
 $(function(){
-    console.log("bármi")
+    kartyaMegkeveres();
     const FELSO = $('#felso')
-    const ALSO = $('#also')
     let tartalom = kepMegjelenit(KEPLISTA)
     FELSO.append(tartalom)
 
@@ -87,4 +98,11 @@ function visszafordit(){
     $(aktKep).attr('src', '../kepek/hatter/hatter.jpg')
     felforditottak.pop()
     felforditottak.pop()
+}
+
+function kartyaMegkeveres(){
+    for (let KEPID = KEPLISTA.length - 1; KEPID > 0; KEPID--) {
+        const RANDOMID = Math.floor(Math.random() * (KEPID+1));
+        [KEPLISTA[KEPID], KEPLISTA[RANDOMID]] = [KEPLISTA[RANDOMID], KEPLISTA[KEPID]]
+    }
 }
